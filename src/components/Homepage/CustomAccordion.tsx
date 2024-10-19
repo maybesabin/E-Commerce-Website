@@ -5,11 +5,11 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { data } from "../data/FAQs"
+import { data } from "../../data/FAQs"
 
 const CustomAccordion = () => {
     return (
-        <div className="flex items-center justify-center w-full pt-[7rem] px-12">
+        <div className="flex items-center justify-center w-full py-[7rem] px-12">
             <div className="flex items-start lg:flex-row flex-col justify-center gap-12 md:gap-[5rem] w-full">
                 <div className="flex flex-col items-start gap-6 md:gap-12 w-full lg:max-w-[25rem] xl:max-w-[35rem]">
                     <h1 className="font-semibold text-3xl md:text-6xl">Any questions? <br />We got you.</h1>

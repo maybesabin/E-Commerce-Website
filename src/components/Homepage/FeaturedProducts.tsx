@@ -1,10 +1,10 @@
-import Card from "./ProductCard"
-import product1 from "../assets/images/Featured Products/product1.jpg"
-import product2 from "../assets/images/Featured Products/product2.jpg"
-import product3 from "../assets/images/Featured Products/product3.jpg"
-import product4 from "../assets/images/Featured Products/product4.jpg"
-import cardbg1 from "../assets/images/card-bg-1.jpg"
-import cardbg2 from "../assets/images/card-bg-2.jpg"
+import Card from "./HomepageProductCard"
+import product1 from "../../assets/images/Featured Products/product1.jpg"
+import product2 from "../../assets/images/Featured Products/product2.jpg"
+import product3 from "../../assets/images/Featured Products/product3.jpg"
+import product4 from "../../assets/images/Featured Products/product4.jpg"
+import cardbg1 from "../../assets/images/card-bg-1.jpg"
+import cardbg2 from "../../assets/images/card-bg-2.jpg"
 
 const Featured = () => {
     return (

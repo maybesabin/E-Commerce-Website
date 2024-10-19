@@ -1,7 +1,7 @@
-import globe from "../assets/images/travel.png"
-import security from "../assets/images/security.png"
-import money from "../assets/images/money.png"
-import purse from "../assets/images/purse.png"
+import globe from "../../assets/images/travel.png"
+import security from "../../assets/images/security.png"
+import money from "../../assets/images/money.png"
+import purse from "../../assets/images/purse.png"
 const Features = () => {
     return (
         <div className="flex items-center justify-center md:py-[7rem] py-12 w-full bg-[#f6f8fa]">

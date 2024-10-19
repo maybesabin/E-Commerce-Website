@@ -3,7 +3,7 @@ import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { useEffect, useState } from 'react';
 
-const ProductCard = ({ previousPrice, newPrice, rating, productName, discountAmount, productImage }: {
+const HomepageProductCard = ({ previousPrice, newPrice, rating, productName, discountAmount, productImage }: {
     previousPrice: number; newPrice: number, rating: number, productName: string, discountAmount: number, productImage: string
 }) => {
 
@@ -58,4 +58,4 @@ const ProductCard = ({ previousPrice, newPrice, rating, productName, discountAmo
     )
 }
 
-export default ProductCard;
+export default HomepageProductCard;

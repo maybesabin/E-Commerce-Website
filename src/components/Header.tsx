@@ -1,20 +1,8 @@
 import { useState } from "react"
 import shoppingCart from "../assets/images/shoppingCart.png"
 import Banner from "./Banner"
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 
 const Header = () => {
-    const headerOptions = [
-        { title: "Home", data: ["Profile", "Billing", "Team", "Subscription"] },
-        { title: "About", data: ["Profile", "Billing", "Team", "Subscription"] },
-        { title: "Products", data: ["Profile", "Billing", "Team", "Subscription"] },
-        { title: "Contact", data: ["Profile", "Billing", "Team", "Subscription"] },
-    ]
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [favouriteCount, setFavouriteCount] = useState(0)
     const [shoppingItemCount, setShoppingItemCount] = useState(0)
@@ -23,26 +11,14 @@ const Header = () => {
         <div className="w-full bg-[#f6f8fa]">
             <Banner />
             <div className="flex items-center justify-between md:px-12 md:py-4 p-2">
-                <div className="md:flex hidden items-center justify-center gap-6">
-                    {headerOptions.map((item, idx) => {
-                        return (
-                            <DropdownMenu key={idx}>
-                                <DropdownMenuTrigger className="lg:text-[1rem] text-xs">{item.title}</DropdownMenuTrigger>
-                                <DropdownMenuContent>
-                                    {item.data.map((options, idx) => {
-                                        return (
-                                            <DropdownMenuItem key={idx}>
-                                                {options}
-                                            </DropdownMenuItem>
-                                        )
-                                    })}
-                                </DropdownMenuContent>
-                            </DropdownMenu>
-                        )
-                    })}
-                </div>
+                <ul className="md:flex hidden items-center justify-center gap-6">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
 
-                <h1 className="lg:text-4xl text-3xl font-bold text-zinc-700 tracking-tighter uppercase">Tendora</h1>
+                <h1 className="lg:text-4xl text-3xl font-bold text-zinc-700 tracking-tighter uppercase">Trendora</h1>
 
                 <div className="flex items-center justify-center gap-7">
                     {isLoggedIn ? (

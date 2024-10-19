@@ -1,4 +1,4 @@
-import bgimage from "../assets/images/bgimage.jpg"
+import bgimage from "../../assets/images/bgimage.jpg"
 
 const HeroSection = () => {
     return (

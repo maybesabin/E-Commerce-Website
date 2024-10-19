@@ -1,12 +1,12 @@
-import adidas from "../assets/images/Brand Logos/adidas.png";
-import nike from "../assets/images/Brand Logos/nike.png";
-import chanel from "../assets/images/Brand Logos/chanel.png";
-import gucci from "../assets/images/Brand Logos/gucci.png";
-import lv from "../assets/images/Brand Logos/lv.png";
-import zara from "../assets/images/Brand Logos/zara.png";
-import balenciaga from "../assets/images/Brand Logos/balenciaga.png"
-import prada from "../assets/images/Brand Logos/prada.png"
-import levis from "../assets/images/Brand Logos/levis.png"
+import adidas from "../../assets/images/Brand Logos/adidas.png";
+import nike from "../../assets/images/Brand Logos/nike.png";
+import chanel from "../../assets/images/Brand Logos/chanel.png";
+import gucci from "../../assets/images/Brand Logos/gucci.png";
+import lv from "../../assets/images/Brand Logos/lv.png";
+import zara from "../../assets/images/Brand Logos/zara.png";
+import balenciaga from "../../assets/images/Brand Logos/balenciaga.png"
+import prada from "../../assets/images/Brand Logos/prada.png"
+import levis from "../../assets/images/Brand Logos/levis.png"
 import Marquee from "react-fast-marquee";
 
 const Partners = () => {
