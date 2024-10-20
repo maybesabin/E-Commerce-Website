@@ -101,7 +101,7 @@ const ProductHero = () => {
     return (
         <div className="py-12 flex items-start justify-center w-full xl:px-0 px-12 min-h-[80vh]">
             <div className="flex items-start justify-center gap-6 w-full xl:w-[80rem]">
-                <div className="w-full flex items-start lg:gap-0 gap-12 lg:flex-row flex-col lg:justify-between justify-start">
+                <div className="w-full flex items-start xl:gap-0 gap-12 lg:flex-row flex-col lg:justify-between justify-start">
                     <div className="flex flex-col items-start gap-9 lg:w-1/4 w-full">
                         <div className="flex items-center w-full gap-4">
                             <Input
@@ -111,7 +111,7 @@ const ProductHero = () => {
                                 placeholder="SEARCH"
                                 className="outline-none px-2 py-1 w-[80%]"
                             />
-                            <Button className="md:hidden flex" onClick={() => setShowFilter(!setFilter)}>{setFilter ? "Hide Filter" : "Show Filter"}</Button>
+                            <Button className="md:hidden flex" onClick={() => setShowFilter(!setFilter)}>{setFilter ? "Hide Filters" : "Show Filters"}</Button>
                         </div>
                         <ul className={`${setFilter ? "flex" : "hidden"} flex-col items-start gap-4`}>
                             <div className="flex lg:flex-col flex-row flex-wrap items-center gap-4">
@@ -120,7 +120,7 @@ const ProductHero = () => {
                                         setGender("All");
                                         setIsActive("All");
                                     }}
-                                    className={` cursor-pointer hover:bg-zinc-100 w-[250px] pr-4 pl-2 rounded-lg transition-all py-2 ${isActive === "All" ? "bg-zinc-200" : ""}`}
+                                    className={` cursor-pointer hover:bg-zinc-100 w-[250px] pr-4 pl-3 rounded-lg transition-all py-2 ${isActive === "All" ? "bg-zinc-200" : ""}`}
                                 >
                                     All
                                 </li>
@@ -129,7 +129,7 @@ const ProductHero = () => {
                                         setGender("male");
                                         setIsActive("Men"); // Set active category to "Men"
                                     }}
-                                    className={` cursor-pointer hover:bg-zinc-100 w-[250px] pr-4 pl-2 rounded-lg transition-all py-2 ${isActive === "Men" ? "bg-zinc-200" : ""}`}
+                                    className={` cursor-pointer hover:bg-zinc-100 w-[250px] pr-4 pl-3 rounded-lg transition-all py-2 ${isActive === "Men" ? "bg-zinc-200" : ""}`}
                                 >
                                     Men
                                 </li>
@@ -138,7 +138,7 @@ const ProductHero = () => {
                                         setGender("female");
                                         setIsActive("Women"); // Set active category to "Women"
                                     }}
-                                    className={` cursor-pointer hover:bg-zinc-100 w-[250px] pr-4 pl-2 rounded-lg transition-all py-2 ${isActive === "Women" ? "bg-zinc-200" : ""}`}
+                                    className={` cursor-pointer hover:bg-zinc-100 w-[250px] pr-4 pl-3 rounded-lg transition-all py-2 ${isActive === "Women" ? "bg-zinc-200" : ""}`}
                                 >
                                     Women
                                 </li>
@@ -147,7 +147,7 @@ const ProductHero = () => {
                                         setGender("kids");
                                         setIsActive("Kids"); // Set active category to "Kids"
                                     }}
-                                    className={` cursor-pointer hover:bg-zinc-100 w-[250px] pr-4 pl-2 rounded-lg transition-all py-2 ${isActive === "Kids" ? "bg-zinc-200" : ""}`}
+                                    className={` cursor-pointer hover:bg-zinc-100 w-[250px] pr-4 pl-3 rounded-lg transition-all py-2 ${isActive === "Kids" ? "bg-zinc-200" : ""}`}
                                 >
                                     Kids
                                 </li>
@@ -201,14 +201,17 @@ const ProductHero = () => {
                             </div>
                         </div>
 
-                        <Button
-                            variant={"destructive"}
-                            onClick={clearFilters}
-                            className={`${setFilter ? " flex" : "hidden"}`
-                            }
-                        >
-                            Clear Filters
-                        </Button>
+                        <div className="flex items-center flex-wrap gap-4">
+                            <Button className="md:flex hidden" onClick={() => setShowFilter(!setFilter)}>{setFilter ? "Hide Filters" : "Show Filters"}</Button>
+                            <Button
+                                variant={"destructive"}
+                                onClick={clearFilters}
+                                className={`${setFilter ? " flex" : "hidden"}`
+                                }
+                            >
+                                Clear Filters
+                            </Button>
+                        </div>
                     </div>
 
                     <div className="flex flex-col items-start justify-center gap-9 w-full xl:w-3/4">

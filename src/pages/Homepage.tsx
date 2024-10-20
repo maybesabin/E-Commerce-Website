@@ -7,7 +7,7 @@ import Newsletter from "@/components/Homepage/Newsletter"
 import Testimonials from "@/components/Homepage/Testimonials"
 const Homepage = () => {
     return (
-        <>
+        <div className="overflow-x-hidden">
             <Hero />
             <Partners />
             <Featured />
@@ -15,7 +15,7 @@ const Homepage = () => {
             <CustomAccordion />
             <Newsletter />
             <Testimonials />
-        </>
+        </div>
     )
 }
 

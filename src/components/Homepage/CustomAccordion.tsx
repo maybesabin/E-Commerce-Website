@@ -14,7 +14,7 @@ const CustomAccordion = () => {
                 <div className="flex flex-col items-start gap-6 md:gap-12 w-full lg:max-w-[25rem] xl:max-w-[35rem]">
                     <h1 className="font-semibold text-3xl md:text-6xl">Any questions? <br />We got you.</h1>
                     <p className="md:text-[1rem] text-xs md:leading-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea aliquid perspiciatis commodi quaerat aperiam id dicta eveniet voluptates exercitationem aut.</p>
-                    <button className="text-purple-700 md:text-[1rem] text-xs md:leading-5 font-semibold flex items-center justify-center gap-2">More FAQs <ArrowForwardIcon fontSize="small" /></button>
+                    <a href="/contact" className="text-purple-700 md:text-[1rem] text-xs md:leading-5 font-semibold flex items-center justify-center gap-2">Ask Us Here <ArrowForwardIcon fontSize="small" /></a>
                 </div>
                 <Accordion type="single" className="lg:w-[600px]" collapsible>
                     {data.map((item, idx) => {

@@ -59,6 +59,19 @@
   stroke-width: 6;
 }
 
+@keyframes blurAnimation {
+  0% {
+    filter: blur(3px);
+  }
+
+  100% {
+    filter: blur(0px);
+  }
+}
+
+.blur-effect {
+  animation: blurAnimation 2s ease-out forwards;
+}
 
 @layer base {
   :root {
