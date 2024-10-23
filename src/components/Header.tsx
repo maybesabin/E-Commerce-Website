@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button"
 
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [favouriteCount, setFavouriteCount] = useState(0)
-    const [shoppingItemCount, setShoppingItemCount] = useState(0)
+    const favouriteCount = 0
+    const shoppingItemCount = 0
     const [showNavbar, setShowNavbar] = useState(false);
     return (
         <div className="w-full h-[6rem] z-[999] bg-white">
