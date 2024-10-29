@@ -2,9 +2,10 @@ import StarIcon from '@mui/icons-material/Star';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const HomepageProductCard = ({ previousPrice, newPrice, rating, productName, discountAmount, productImage }: {
-    previousPrice: number; newPrice: number, rating: number, productName: string, discountAmount: number, productImage: string
+    previousPrice: number; newPrice: number, rating: number, productName: string, discountAmount: number, productImage: string,
 }) => {
 
     const fullStars = Math.floor(rating);
@@ -20,11 +21,11 @@ const HomepageProductCard = ({ previousPrice, newPrice, rating, productName, dis
     }, [])
 
     return (
-        <div className="flex flex-col items-center justify-center gap-2">
+        <Link to={`/product/${productName.split(' ').join('')}`} className="flex flex-col items-center justify-center gap-2">
 
             <div className="group relative h-96 w-72">
                 <div className="absolute top-0 left-0 h-full w-full cursor-pointer bg-gray-500 opacity-0 group-hover:opacity-75 transition-opacity duration-500 ease-in-out flex items-center justify-center z-[2]">
-                    <a href='#' className="text-white">View the Product</a>
+                    <h1 className="text-white">View the Product</h1>
                 </div>
                 <div className="w-full h-full z-[1] cursor-pointer group-hover:brightness-75 transition-all duration-500 ease-in-out">
                     <img src={productImage} className="object-cover h-full w-full" alt="" />
@@ -54,7 +55,7 @@ const HomepageProductCard = ({ previousPrice, newPrice, rating, productName, dis
                     <span key={index}>{star}</span>
                 ))}
             </div>
-        </div>
+        </Link>
     )
 }
 

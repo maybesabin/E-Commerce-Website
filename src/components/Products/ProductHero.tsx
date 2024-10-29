@@ -278,7 +278,7 @@ const ProductHero = () => {
                             </div>
 
                             <div className="flex items-center gap-4">
-                                <p>Sort By</p>
+                                <p>Sort by rating</p>
                                 <Select
                                     value={filterBasedOn}
                                     onValueChange={(value) => setFilterBasedOn(value)}

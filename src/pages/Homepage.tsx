@@ -5,9 +5,12 @@ import Features from "@/components/Homepage/Features"
 import CustomAccordion from "../components/Homepage/CustomAccordion"
 import Newsletter from "@/components/Homepage/Newsletter"
 import Testimonials from "@/components/Homepage/Testimonials"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 const Homepage = () => {
     return (
         <div className="overflow-x-hidden">
+            <Header />
             <Hero />
             <Partners />
             <Featured />
@@ -15,6 +18,7 @@ const Homepage = () => {
             <CustomAccordion />
             <Newsletter />
             <Testimonials />
+            <Footer />
         </div>
     )
 }

@@ -1,23 +1,108 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import shoppingCart from "../assets/images/shoppingCart.png"
 import Banner from "./Banner"
 import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom"
+import { getUserFromLocalStorage } from "@/utils/localStorage"
+import logo from "../assets/images/logo.png"
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
+
 
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const favouriteCount = 0
     const shoppingItemCount = 0
     const [showNavbar, setShowNavbar] = useState(false);
+    const data = getUserFromLocalStorage()
+    useEffect(() => {
+        if (!data) {
+            setIsLoggedIn(false);
+        } else {
+            setIsLoggedIn(true)
+        }
+    }, [])
+
     return (
         <div className="w-full h-[6rem] z-[999] bg-white">
             <div className="fixed top-0 w-full left-0 z-[999] border-[#f6f8fa] border-b-2 bg-white">
                 <Banner />
-                <div className="flex items-center justify-between md:px-12 md:py-4 p-2">
-                    <div className="lg:flex hidden items-center justify-center gap-6">
-                        <a href="/"><Button className="hover:bg-zinc-300 transition-all text-zinc-500 hover:text-zinc-700" variant={"secondary"}>Home</Button></a>
-                        <a href="/about"><Button className="hover:bg-zinc-300 transition-all text-zinc-500 hover:text-zinc-700" variant={"secondary"}>About</Button></a>
-                        <a href="/products"><Button className="hover:bg-zinc-300 transition-all text-zinc-500 hover:text-zinc-700" variant={"secondary"}>Products</Button></a>
-                        <a href="/contact"><Button className="hover:bg-zinc-300 transition-all text-zinc-500 hover:text-zinc-700" variant={"secondary"}>Contact</Button></a>
+                <div className="flex items-center justify-between px-12 py-4">
+                    <div className="lg:flex hidden items-center justify-center gap-9">
+                        <Link to="/" className="text-[0.85rem] font-medium">Home</Link>
+                        <Link to="/about" className="text-[0.85rem] font-medium">About</Link>
+                        <NavigationMenu className="-mx-4 -mt-0.5">
+                            <NavigationMenuList>
+                                <NavigationMenuItem>
+                                    <Link to="/products"><NavigationMenuTrigger>Products</NavigationMenuTrigger></Link>
+                                    <NavigationMenuContent className="md:flex hidden">
+                                        <ul className="grid gap-8 px-6 py-9 md:w-[500px] lg:w-[900px] lg:grid-cols-[.75fr_1fr]">
+                                            <li className="row-span-3">
+                                                <img src={logo} className="h-6 w-6" />
+                                                <div className="mb-2 mt-4 text-lg font-semibold">
+                                                    Trendora - Your shopping destination
+                                                </div>
+                                                <p className="text-sm leading-tight text-muted-foreground">
+                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur libero nisi iste, voluptatem.
+                                                </p>
+                                                <div className="flex flex-col items-start gap-3 w-80 pt-9">
+                                                    <h1 className="text-md font-medium">User Focused Links</h1>
+                                                    <ul className="flex items-center gap-3 flex-wrap">
+                                                        <li className="hover:underline text-sm">Eco-Friendly Products</li>
+                                                        <li className="hover:underline text-sm">Gift Cards</li>
+                                                        <li className="hover:underline text-sm">Product guides</li>
+                                                        <li className="hover:underline text-sm">Customer Favourites</li>
+                                                        <li className="hover:underline text-sm">Top Rated Products</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li className="flex flex-col items-start gap-3">
+                                                <h1 className="text-md font-medium">Men's Fashion</h1>
+                                                <ul className="flex items-center gap-3 flex-wrap">
+                                                    <li className="hover:underline text-sm">Shoes</li>
+                                                    <li className="hover:underline text-sm">Clothing</li>
+                                                    <li className="hover:underline text-sm">Accessories</li>
+                                                    <li className="hover:underline text-sm">New Arrivals</li>
+                                                    <li className="hover:underline text-sm">Best Sellers</li>
+                                                    <li className="hover:underline text-sm">Trending Now</li>
+                                                    <li className="hover:underline text-sm">Limited Now</li>
+                                                    <li className="hover:underline text-sm">Clearance Sale</li>
+                                                </ul>
+                                            </li>
+                                            <li className="flex flex-col items-start gap-3">
+                                                <h1 className="text-md font-medium">Women's Fashion</h1>
+                                                <ul className="flex items-center gap-3 flex-wrap">
+                                                    <li className="hover:underline text-sm">Shoes</li>
+                                                    <li className="hover:underline text-sm">Clothing</li>
+                                                    <li className="hover:underline text-sm">Accessories</li>
+                                                    <li className="hover:underline text-sm">New Arrivals</li>
+                                                    <li className="hover:underline text-sm">Best Sellers</li>
+                                                    <li className="hover:underline text-sm">Trending Now</li>
+                                                    <li className="hover:underline text-sm">Limited Now</li>
+                                                    <li className="hover:underline text-sm">Clearance Sale</li>
+                                                </ul>
+                                            </li>
+                                            <li className="flex flex-col items-start gap-3">
+                                                <h1 className="text-md font-medium">Popular Collections</h1>
+                                                <ul className="flex items-center gap-3 flex-wrap">
+                                                    <li className="hover:underline text-sm">New Arrivals</li>
+                                                    <li className="hover:underline text-sm">Best Sellers</li>
+                                                    <li className="hover:underline text-sm">Trending Now</li>
+                                                    <li className="hover:underline text-sm">Limited Now</li>
+                                                    <li className="hover:underline text-sm">Clearance Sale</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
+                        <Link to="/contact" className="text-[0.85rem] font-medium">Contact</Link>
                     </div>
 
                     <h1 className="lg:text-4xl text-3xl font-bold text-zinc-700 tracking-tighter uppercase">Trendora</h1>
@@ -25,7 +110,7 @@ const Header = () => {
                     <div className="flex items-center justify-center gap-7">
                         {isLoggedIn ? (
                             <>
-                                <h3 className="lg:text-[1rem] text-xs lg:flex hidden"><span className="opacity-75">Welcome</span>, Sabin Hamal</h3>
+                                <h3 className="lg:text-[1rem] text-xs lg:flex hidden capitalize"><span className="opacity-75">Welcome</span>, {data.firstName}</h3>
                                 <div className="relative cursor-pointer" title="Shopping Cart">
                                     <img src={shoppingCart} width={'27px'} alt="" />
                                     <h3 className="absolute -top-2 -right-1 bg-black text-white rounded-full px-1 text-xs">{shoppingItemCount}</h3>
@@ -56,12 +141,17 @@ const Header = () => {
                                         />
                                     </svg>
                                 </button>
+                                <Button className="px-6" variant={"default"} onClick={() => setIsLoggedIn(false)} >
+                                    Log Out
+                                </Button>
                             </>
                         ) : (
                             <>
-                                <Button className="px-6 bg-purple-600 hover:bg-purple-800" onClick={() => setIsLoggedIn(!isLoggedIn)} >
-                                    Log In
-                                </Button>
+                                <Link to={"/signup"}>
+                                    <Button className="px-6" onClick={() => setIsLoggedIn(!isLoggedIn)} >
+                                        Sign In
+                                    </Button>
+                                </Link>
                             </>
 
                         )}
@@ -76,7 +166,7 @@ const Header = () => {
                     <a href="/contact"><Button className="hover:bg-zinc-300 transition-all text-zinc-500 hover:text-zinc-700" variant={"secondary"}>Contact</Button></a>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
